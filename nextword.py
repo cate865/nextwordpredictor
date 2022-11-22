@@ -4,8 +4,8 @@ import numpy as np
 from tensorflow import keras
 from keras.utils.data_utils import pad_sequences
 
-lstm_model = keras.models.load_model('nextword_model.h5')
-t = pickle.load(open('nextword_tokenizer.pkl','rb'))
+lstm_model = keras.models.load_model('./nextword_model.h5')
+t = pickle.load(open('./nextword_tokenizer.pkl','rb'))
 
 def predict_word(text,model,tokenizer):
     encoded_text = t.texts_to_sequences([text])[0]       
